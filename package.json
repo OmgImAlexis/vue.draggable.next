@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://github.com/SortableJS/Vue.Draggable.git"
   },
+  "files": [
+    "dist"
+  ],
   "private": false,
   "scripts": {
     "prepare": "npm run build",
@@ -89,12 +92,5 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ],
-  "files": [
-    "dist/*.css",
-    "dist/*.map",
-    "dist/*.js",
-    "src/*"
-  ],
-  "module": "dist/vuedraggable.umd.js"
+  ]
 }
