@@ -10,11 +10,11 @@ import { computeComponentStructure } from "./core/renderHelper";
 import { events } from "./core/sortableEvents";
 import { h, defineComponent, nextTick } from "vue";
 
-function emit(evtName, evtData) {
+function emit(evtName: string, evtData) {
   nextTick(() => this.$emit(evtName.toLowerCase(), evtData));
 }
 
-function manage(evtName) {
+function manage(evtName: string) {
   return (evtData, originalElement) => {
     if (this.realList !== null) {
       return this[`onDrag${evtName}`](evtData, originalElement);
@@ -74,13 +74,10 @@ const emits = [
   ...[...events.manageAndEmit, ...events.emit].map(evt => evt.toLowerCase())
 ];
 
-const draggableComponent = defineComponent({
+export const draggableComponent = defineComponent({
   name: "draggable",
-
   inheritAttrs: false,
-
   props,
-
   emits,
 
   data() {
@@ -313,4 +310,3 @@ const draggableComponent = defineComponent({
   }
 });
 
-export default draggableComponent;

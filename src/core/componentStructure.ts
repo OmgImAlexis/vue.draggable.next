@@ -1,9 +1,15 @@
 const getHtmlElementFromNode = ({ el }) => el;
-const addContext = (domElement, context) =>
-  (domElement.__draggable_context = context);
+const addContext = (domElement, context) => (domElement.__draggable_context = context);
 const getContext = domElement => domElement.__draggable_context;
 
-class ComponentStructure {
+export class ComponentStructure {
+  defaultNodes: any;
+  children: any[];
+  externalComponent: any;
+  rootTransition: any;
+  tag: any;
+  realList: any;
+
   constructor({
     nodes: { header, default: defaultNodes, footer },
     root,
@@ -65,5 +71,3 @@ class ComponentStructure {
     return domIndex < indexFirstDomListElement ? 0 : length;
   }
 }
-
-export { ComponentStructure };

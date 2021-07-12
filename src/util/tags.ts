@@ -118,16 +118,14 @@ const tags = [
   "wbr"
 ];
 
-function isHtmlTag(name) {
+export function isHtmlTag(name) {
   return tags.includes(name);
 }
 
-function isTransition(name) {
+export function isTransition(name) {
   return ["transition-group", "TransitionGroup"].includes(name);
 }
 
-function isHtmlAttribute(value) {
+export function isHtmlAttribute(value) {
   return ["id", "class", "role", "style"].includes(value) || value.startsWith("data-") || value.startsWith("aria-");
 }
-
-export { isHtmlTag, isHtmlAttribute, isTransition };

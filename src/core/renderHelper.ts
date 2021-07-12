@@ -47,10 +47,8 @@ function getRootInformation(tag) {
   };
 }
 
-function computeComponentStructure({ $slots, tag, realList, getKey }) {
+export function computeComponentStructure({ $slots, tag, realList, getKey }) {
   const nodes = computeNodes({ $slots, realList, getKey });
   const root = getRootInformation(tag);
   return new ComponentStructure({ nodes, root, realList });
 }
-
-export { computeComponentStructure };
